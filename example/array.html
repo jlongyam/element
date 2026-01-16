@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>element: array</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="../src/element.js"></script>
+  <script>
+    var tree = [ 'div', { id: 'container', style: 'padding:20px; border:1px solid #ccc;' },
+      ['h2', 'Demo'],
+      ['p', 'This is a paragraph created from array.'],
+      ['ul',
+        ['li', { class: 'foo', style: 'color:red;background-color:white'}, 'Item 1'],
+        ['li', 'Item 2'],
+        ['li', 'Item 3']
+      ],
+      ['br'],
+      [ 'div',
+        ['div', 'DIV',
+          [ 'div',
+            ['b', 'Bold'],
+            ['br'],
+            ['i',  { style: 'color: blue'}, 'Italic']
+          ]
+        ]
+      ]
+    ];
+    
+    root.appendChild(createHTML(tree));
+  </script>
+</body>
+</html>

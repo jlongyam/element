@@ -1,0 +1,25 @@
+{
+  "name": "element",
+  "version": "1.0.0",
+  "description": "Legacy HTML Element Creator.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlongyam/element.git"
+  },
+  "keywords": [
+    "HTML",
+    "element"
+  ],
+  "author": "jlongyam",
+  "license": "MIT",
+  "type": "commonjs",
+  "homepage": "https://jlongyam.github.io/element",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "tests"
+  },
+  "scripts": {
+    "server": "http-server ./ https://fantastic-space-parakeet-59qq9xpgp9p3jpj-5500.app.github.dev -c-1"
+  }
+}
