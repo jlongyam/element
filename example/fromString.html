@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>createHTML from String</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="../src/createHTML.js"></script>
+  <script>
+    var article = createHTML(`
+      <article>
+        <h1>Heading</h1>
+        <p>Paragraph</p>
+      </article>
+    `);
+    root.appendChild(article);
+  </script>
+</body>
+</html>

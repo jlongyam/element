@@ -3,24 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test: element</title>
+  <title>Test: createHTML</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha@11.7.5/mocha.min.css">
   <script src="https://cdn.jsdelivr.net/npm/expect.js@0.3.1/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mocha@11.7.5/mocha.min.js"></script>
 </head>
 <body>
   <div id="mocha"></div>
-  <script src="../src/element.js"></script>
+  <script src="../src/createHTML.js"></script>
   <script class="mocha-init">
       mocha.setup("bdd");
       mocha.checkLeaks();
     </script>
   <script>
     describe('Element with array argument', function() {
-      it('should be display in DOM', function() {
-        const el = createElement(['div', {id: 'test'}]);
+      it('should be in DOM', function() {
+        var el = createHTML(['div', {id: 'test'}]);
         expect(el.id).to.be('test');
       });
+      it('Should be not in "div" element', function() {
+        let span0 = document.createElement('span');
+        span0.id = 'span0';
+        var span1 = createHTML(`<span>test</span>`);
+        span0.appendChild(span1)
+        expect(span1.parentElement.id).to.be('span0')
+      })
     });
   </script>
   <script class="mocha-exec">
